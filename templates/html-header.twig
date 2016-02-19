@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="cs" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>{% if wp_title %}{{ wp_title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="shortcut icon" href="{{site.theme.link}}/dist/images/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{site.theme.link}}/dist/css/app.css" media="screen" charset="utf-8">
+
+        <link rel="alternate" type="application/rss+xml" title="Paralelní polis &raquo; Feed" href="http://www.paralelnipolis.cz/feed/">
+        <link rel="alternate" type="application/rss+xml" title="Paralelní polis &raquo; Comments Feed" href="http://www.paralelnipolis.cz/comments/feed/" >
+        <link rel="alternate" href="http://www.paralelnipolis.cz/" hreflang="cs">
+        <link rel="alternate" href="http://www.paralelnipolis.cz/en/" hreflang="en">
+
+        <!-- Javascript works? Add a class -->
+        <script>
+            document.getElementsByTagName('html')[0].classList.remove('no-js');
+            document.getElementsByTagName('html')[0].classList.add('js');
+        </script>
+        {{function('wp_head')}}

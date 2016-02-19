@@ -1,0 +1,29 @@
+table {
+    min-width: 60%;
+    margin: 0 auto;
+}
+th {
+    border-bottom: 1px solid #000;
+    text-align: left;
+
+    &:last-child {
+        text-align: right;
+    }
+}
+tr:hover td {
+    background: #eee;
+}
+.divider td {
+    height: 0;
+    padding: 0;
+    border-bottom: 1px solid #000;
+}
+td {
+    padding: 0.3rem 0;
+    transition: background 0.2s;
+
+    &:last-child {
+        width: 25%;
+        text-align: right;
+    }
+}

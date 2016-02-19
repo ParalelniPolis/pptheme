@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<!-- Container component -->
+	<div class="container" id="post-{{post.ID}}">
+
+		<h1>{{post.title}}</h1>
+		<div class="blog-detail__meta">
+			<div class="blog-detail__meta-date">
+				{{post.post_date|date}}
+			</div>
+			<div class="blog-detail__meta-tags">
+				{% for tag in post.tags %}
+					<a href="#" class="blog-detail__tag">{{tag}}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="blog-detail__image">
+			<img src="{{post.thumbnail}}" alt="{{post.thumbnail.alt}}" title="{{post.thumbnail.title}}" />
+		</div>
+
+		<div class="blog-detail__article">
+			{{post.content}}
+		</div>
+		
+	</div>
+{% endblock %}

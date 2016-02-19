@@ -1,0 +1,22 @@
+.map {
+    position: relative;
+    height: 26rem;
+}
+
+.map__static {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.map__window {
+    font-size: 0.8rem;
+
+    & p {
+        line-height: 1.5em;
+    }
+}

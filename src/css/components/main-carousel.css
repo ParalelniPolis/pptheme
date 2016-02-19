@@ -1,0 +1,165 @@
+.main-carousel {
+    position: relative;
+    height: 100vh;
+    min-height: 31rem;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    background: #333333;
+
+    @media screen and (min-width: 75.6875rem) {
+        & {
+            margin-top: -4.4rem;
+        }
+    }
+}
+.main-carousel__inner {
+    height: 100%;
+    transition: transform 1s;
+}
+.main-carousel__item {
+    position: relative;
+    float: left;
+    width: 100vw;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-carousel__item-inner {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    margin: auto;
+}
+.main-carousel__item-heading {
+    display: inline-block;
+    font-size: 5rem;
+    font-weight: 600;
+}
+.main-carousel__item-content {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-shadow: 0 0 3px #000;
+}
+.main-carousel__dots {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    margin: auto;
+}
+.main-carousel__dot {
+    position: relative;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin: 7px;
+    padding: 2px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: transparent;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+}
+.main-carousel__dot--active {
+
+    &:after {
+        opacity: 1;
+    }
+}
+.main-carousel__social {
+    position: absolute;
+    top: 78%;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    margin: auto;
+
+    & a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0 0.2em;
+        line-height: 30px;
+        background: #fff;
+        border-radius: 50%;
+        color: #212121;
+
+        &:hover {
+            background: #de454e;
+        }
+    }
+}
+.main-carousel__action {
+    position: absolute;
+    top: 87%;
+    left: 0;
+    right: 0;
+    max-width: 360px;
+    margin: auto;
+    text-align: center;
+
+    & .scroll {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: #fff;
+
+        &::before {
+            content: '\fe40';
+            display: block;
+            width: 2.6rem;
+            height: 2.6rem;
+            margin: auto;
+            margin-bottom: 5px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            font-size: 2.3rem;
+            line-height: 1.5em;
+            transition: border 0.2s;
+            animation-name: pulse;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+        }
+
+        &:hover {
+            color: #de454e;
+
+            &::before {
+                border: 2px solid #de454e;
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

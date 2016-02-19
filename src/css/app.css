@@ -1,0 +1,64 @@
+/* Website base styles */
+:root {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+html {
+    @media screen and (min-width: 40rem) {
+        & {
+            font-size: 110%;
+        }
+    }
+    @media screen and (min-width: 60rem) {
+        & {
+            font-size: 120%;
+        }
+    }
+}
+
+body {
+    @media screen and (min-width: 75.6875rem) {
+        & {
+            padding-top: 4.4rem;
+        }
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: #de454e;
+    transition: color 0.2s, background 0.2s;
+
+    &:hover {
+        color: #aaa;
+    }
+}
+
+p {
+    line-height: 2em;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: .17em 0;
+}
+h2 {
+    font-size: 2.9rem;
+}
+h3 {
+    font-size: 2.3rem;
+}
+h4 {
+    font-size: 2.1rem;
+}

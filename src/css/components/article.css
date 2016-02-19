@@ -1,0 +1,79 @@
+.article-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    @media screen and (min-width: 60rem) {
+        & {
+            flex-wrap: nowrap;
+        }
+    }
+}
+.article {
+    position: relative;
+    margin: 1rem 0;
+    flex: 1 1 auto;
+    transition: box-shadow 0.2s;
+
+    @media screen and (min-width: 40rem) {
+        & {
+            flex: 1 0 15rem;
+        }
+    }
+
+    @media screen and (min-width: 60rem) {
+        & {
+            flex: 0 1 19.875rem;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 0.7rem #666;
+    }
+}
+.article__date {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    z-index: 1;
+    text-align: center;
+}
+.article__date-day {
+    padding: 0.2rem 0.875rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    background: #000;
+}
+.article__date-month {
+    font-size: 0.7rem;
+    color: #000;
+    background: #d9d9d9;
+}
+.article__image {
+    position: relative;
+    height: 21.4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.article__image--loaded {
+    opacity: 1;
+}
+.article__title {
+    height: 6.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.375rem;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+    background: #d9d9d9;
+}
+.more-articles {
+    margin: 2rem 0;
+    text-align: center;
+}

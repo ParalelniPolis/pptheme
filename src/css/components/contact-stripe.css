@@ -1,0 +1,30 @@
+.contact-stripe {
+    padding: 2rem 0;
+    background: #222;
+    color: #fff;
+
+    & .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.contact-stripe__heading {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.contact-stripe__address {
+    display: none;
+    padding-left: 1rem;
+    border-left: 2px solid #fff;
+    line-height: 1.5em;
+
+    @media screen and (min-width: 30rem) {
+        & {
+            display: block;
+        }
+    }
+}

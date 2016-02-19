@@ -1,0 +1,135 @@
+.header {
+    position: static;
+    z-index: 3;
+    padding: 1rem;
+    background: #333;
+    transition: background 0.4s;
+}
+.header__logo {
+    text-indent: -99999px;
+    background: url('dist/images/logo.png') center center no-repeat;
+    width: 161px;
+    height: 46px;
+}
+.header__navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+.header__navigation,
+.header__subnavigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.header__navigation {
+    margin-top: 1rem;
+}
+.header__navigation-item {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.header__navigation-item--with-subnavigation {
+    padding-right: 1rem;
+    background: url('/dist/images/arrow-down.png') no-repeat right center;
+}
+.header__navigation-item .header__subnavigation {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+    min-height: 6rem;
+    padding: 0.4rem 1.3rem;
+    background: #4d4d4d;
+
+    &::after {
+        content: '\2715';
+        position: absolute;
+        top: 0.4rem;
+        right: 1rem;
+        font-size: 1.4rem;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+.header__navigation-item-link.is--active + .header__subnavigation,
+.header__navigation-item:hover .header__subnavigation{
+    display: block;
+}
+.header__navigation-item-link,
+.header__subnavigation-item-link {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+        color: #aaa;
+    }
+}
+.header__subnavigation-item {
+    display: block;
+    font-size: 0.8rem;
+    padding: 0.2rem 0;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.header__language-links {
+    position: absolute;
+    top: -0.3rem;
+    right: 2%;
+}
+.header__language-link {
+    display: inline-block;
+    padding: 0.1rem 0.2rem;
+    background: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: #1d1d1d;
+
+    &:hover {
+        color: #333;
+        background: #ddd;
+    }
+}
+@media screen and (min-width: 75.6875rem) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 998;
+    }
+    .header--transparent {
+        background: transparent;
+    }
+    .header__navigation {
+        margin-top: 0;
+    }
+    .header__navigation-item {
+        position: relative;
+    }
+    .header__navigation-item .header__subnavigation {
+        position: absolute;
+        top: 1.2rem;
+        right: 0;
+        left: initial;
+        min-height: initial;
+        min-width: 9rem;
+        width: 100%;
+        padding: 0.4rem 0.3rem;
+
+        &::after {
+            display: none;
+        }
+    }
+}

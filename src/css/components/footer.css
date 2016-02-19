@@ -1,0 +1,34 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+    padding: 0 1rem;
+    background-color: #212121;
+}
+.footer__social {
+    text-align: center;
+
+    & a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0 0.2em;
+        line-height: 30px;
+        background: #fff;
+        border-radius: 50%;
+        color: #212121;
+
+        &:hover {
+            background: #de454e;
+        }
+    }
+}
+.footer__vejdiven {
+    height: 50px;
+    padding: 6px;
+    padding-left: 40px;
+    line-height: 40px;
+    background: url('/dist/images/map-logo.png') no-repeat left center;
+    color: #fff;
+}

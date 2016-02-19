@@ -1,0 +1,28 @@
+<!-- Header component -->
+<div class="header {{homepage}}" id="js-header">
+    <div class="header__navigation-wrapper">
+        <a href="/" class="header__logo">
+                    Paralelní Polis
+                </a>
+        <ul class="header__navigation" role="menubar" aria-label="Hlavní menu">
+            {% for item in menu.get_items %}
+                <li role="menuitem" tabindex="0" class="header__navigation-item {% if item.get_children %}header__navigation-item--with-subnavigation{% endif %}">
+                    <a href="{{item.get_link}}" class="header__navigation-item-link">{{item.title}}</a>
+                    {% if item.get_children %}
+                        <ul role="menu" class="header__subnavigation" aria-hidden="true">
+                            {% for child in item.get_children %}
+                                <li role="menuitem" tabindex="-1" class="header__subnavigation-item">
+                                    <a href="{{child.get_link}}" class="header__subnavigation-item-link">{{child.title}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="header__language-links">
+            <a href="#" class="header__language-link">Česky</a>
+            <a href="#" class="header__language-link">English</a>
+        </div>
+    </div>
+</div>

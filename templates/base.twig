@@ -1,0 +1,30 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body>
+		{% block header %}
+			{% include 'header.twig' %}
+		{% endblock %}
+
+		{% block content %}
+			Sorry, no content
+		{% endblock %}
+
+		{% block blog_snippet %}
+			{% include 'blog-snippet.twig' %}
+		{% endblock %}
+
+		{% include 'contact-stripe.twig' %}
+		{% include 'map.twig' %}
+
+		{% block footer %}
+			{% include 'footer.twig' %}
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

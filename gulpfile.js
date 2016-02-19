@@ -6,7 +6,6 @@ var pngquant = require('imagemin-pngquant');
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
-var livereload = require('gulp-livereload');
 var base64 = require('gulp-base64');
 var http = require('http');
 var st = require('st');

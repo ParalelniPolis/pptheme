@@ -1,8 +1,8 @@
 {
   "name": "paralelnipolis",
   "version": "0.0.0",
-  "description": "Front-end for Paralelni Polis website",
-  "main": "index.js",
+  "description": "Wordpress Theme for paralelnipolis.cz",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

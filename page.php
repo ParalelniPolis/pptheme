@@ -24,4 +24,8 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+if (is_front_page() ) {
+    $context['header_transparent'] = 'header--transparent';
+}
+
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

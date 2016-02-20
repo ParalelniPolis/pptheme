@@ -2,7 +2,8 @@
 
 ## Wordpress Dependencies
 
-- Latest 'Timber' Wordpress plugin (see componser.json)
+- Latest 'Timber' Wordpress plugin
+- Latest 'Toolset Types' Wordpress plugin
 
 ## Building a Theme
 

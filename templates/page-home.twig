@@ -125,6 +125,53 @@
 
 <div id="scroll-here"></div>
 
+{% for hero in hero_elements %}
+<!-- Hero component -->
+    <div class="hero">
+        <div class="hero__item" data-image="{{hero.thumbnail}}">
+            {{hero.post_title}}
+        </div>
+    </div>
+
+    <!-- Container component -->
+    <div class="container">
+        <!-- Info box component -->
+        <div class="info-box">
+            <div class="info-box__action">
+                <h3>Institut Kryptoanarchie</h3>
+                <a href="#" class="button">Více info</a>
+            </div>
+            <div class="info-box__text">
+                <p>
+                    {{hero.post_content}}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+<div class="hero">
+    <div class="hero__item" data-image="{{hero_element.thumbnail}}">
+        {{hero_element.title}}
+    </div>
+</div>
+
+<!-- Container component -->
+<div class="container">
+    <!-- Info box component -->
+    <div class="info-box">
+        <div class="info-box__action">
+            <h3>{{hero_element.title}}</h3>
+            <a href="#" class="button">Více info</a>
+        </div>
+        <div class="info-box__text">
+            <p>
+                {{hero_element.content}}
+            </p>
+        </div>
+    </div>
+</div>
+
 <!-- Hero component -->
 <div class="hero">
     <div class="hero__item" data-image="dist/images/institute-of-cryptoanarchy-hero.jpg">

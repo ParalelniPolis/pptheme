@@ -28,4 +28,9 @@ if (is_front_page() ) {
     $context['header_transparent'] = 'header--transparent';
 }
 
+$context['hero_elements'] = types_child_posts('hero-element');
+$heroElement = new TimberPost(75);
+$context['hero_element'] = $heroElement;
+var_dump($heroElement);
+
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

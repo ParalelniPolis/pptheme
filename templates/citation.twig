@@ -1,0 +1,9 @@
+<div class="citation__slide {% if loop.first %}citation__slide--active{% endif %}">
+    <div class="citation__author">
+        <div class="citation__author-name">{{citation.title}}</div>
+        <div class="citation__author-description">{{citation.get_preview(50, false, '')}}</div>
+    </div>
+    <div class="citation__content">
+        {{citation.content}}
+    </div>
+</div>

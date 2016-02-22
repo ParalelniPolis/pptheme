@@ -1,0 +1,11 @@
+<div class="main-carousel__item" data-image="{{item.thumbnail}}">
+    <div class="main-carousel__item-inner">
+        <div class="main-carousel__item-heading">
+            {{item.title}}
+        </div>
+        <div class="main-carousel__item-content">
+            <p>{{item.content}}</p>
+            <a href="{{item.get_field('wpcf-button_url')}}" class="button">{{item.get_field('wpcf-button_text')}}</a>
+        </div>
+    </div>
+</div>

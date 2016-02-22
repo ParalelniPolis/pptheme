@@ -2,309 +2,57 @@
 
 {% block content %}
 
-<!-- Main carousel component -->
-<div class="main-carousel" id="js-main-carousel">
-    <div class="main-carousel__inner" id="js-main-carousel-inner" data-slide="0">
-        <div class="main-carousel__item" data-image="dist/images/main-carousel-img1.jpg">
-            <div class="main-carousel__item-inner">
-                <div class="main-carousel__item-heading">
-                    Kino 43
-                </div>
-                <div class="main-carousel__item-content">
-                    <p>Přijďte si vyzkoušet atmosféru místa, ve kterém budete pracovat, využijte zkušebního dnu zdarma.</p>
-                    <a href="#" class="button">Více info</a>
-                </div>
-            </div>
+    {# Main carousel #}
+    {% if carousel_items %}
+    <!-- Main carousel component -->
+    <div class="main-carousel" id="js-main-carousel">
+        <div class="main-carousel__inner" id="js-main-carousel-inner" data-slide="0">
+            {% for item in carousel_items %}
+                {% include 'main-carousel.twig' with {'item' : item} %}
+            {% endfor %}
         </div>
-        <div class="main-carousel__item" data-image="dist/images/main-carousel-img1.jpg">
-            <div class="main-carousel__item-inner">
-                <div class="main-carousel__item-heading">
-                    Kino 43
-                </div>
-                <div class="main-carousel__item-content">
-                    <p>Přijďte si vyzkoušet atmosféru místa, ve kterém budete pracovat, využijte zkušebního dnu zdarma.</p>
-                    <a href="#" class="button">Více info</a>
-                </div>
-            </div>
+        <div class="main-carousel__dots" id="js-carousel-dots"></div>
+        <div class="main-carousel__social">
+            <a href="https://www.facebook.com/vejdiven/" target="_blank">
+                <i class="icon-facebook"></i>
+            </a>
+            <a href="https://twitter.com/paralelni_polis" target="_blank">
+                <i class="icon-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCfHJ5Y3akQ7LA0PQmSYlYmQ/feed" target="_blank">
+                <i class="icon-youtube"></i>
+            </a>
         </div>
-        <div class="main-carousel__item" data-image="dist/images/main-carousel-img1.jpg">
-            <div class="main-carousel__item-inner">
-                <div class="main-carousel__item-heading">
-                    Kino 43
-                </div>
-                <div class="main-carousel__item-content">
-                    <p>Přijďte si vyzkoušet atmosféru místa, ve kterém budete pracovat, využijte zkušebního dnu zdarma.</p>
-                    <a href="#" class="button">Více info</a>
-                </div>
-            </div>
-        </div>
-        <div class="main-carousel__item" data-image="dist/images/main-carousel-img1.jpg">
-            <div class="main-carousel__item-inner">
-                <div class="main-carousel__item-heading">
-                    Kino 43
-                </div>
-                <div class="main-carousel__item-content">
-                    <p>Přijďte si vyzkoušet atmosféru místa, ve kterém budete pracovat, využijte zkušebního dnu zdarma.</p>
-                    <a href="#" class="button">Více info</a>
-                </div>
-            </div>
+        <div class="main-carousel__action">
+            <a href="#scroll-here" data-speed="1000" class="scroll">Pokračovat</a>
         </div>
     </div>
-    <div class="main-carousel__dots" id="js-carousel-dots">
-    </div>
-    <div class="main-carousel__social">
-        <a href="https://www.facebook.com/vejdiven/" target="_blank">
-            <i class="icon-facebook"></i>
-        </a>
-        <a href="https://twitter.com/paralelni_polis" target="_blank">
-            <i class="icon-twitter"></i>
-        </a>
-        <a href="https://www.youtube.com/channel/UCfHJ5Y3akQ7LA0PQmSYlYmQ/feed" target="_blank">
-            <i class="icon-youtube"></i>
-        </a>
-    </div>
-    <div class="main-carousel__action">
-        <a href="#scroll-here" data-speed="1000" class="scroll">Pokračovat</a>
-    </div>
-</div>
+    {% endif %}
 
-<!-- Calendar component -->
-<div class="calendar calendar--loading" id="js-calendar">
-    <div class="calendar__header">
-        <div class="calendar__heading">
-            Kalendář
-        </div>
-        <div class="calendar__address">
-            Dělnická 43
-            <br> Praha 7
-            <br>
-            <a href="mailto:info@paralelnipolis.cz">info@paralelnipolis.cz</a>
-        </div>
-    </div>
-    <div class="calendar__overlay-wrap">
-        <div class="calendar__table" id="js-calendar__table">
-            <div class="calendar__table-column">
-                <div class="calendar__cell-head"></div>
-                <div class="calendar__cell-body"></div>
-            </div>
-            <div class="calendar__table-column">
-                <div class="calendar__cell-head"></div>
-                <div class="calendar__cell-body"></div>
-            </div>
-            <div class="calendar__table-column">
-                <div class="calendar__cell-head"></div>
-                <div class="calendar__cell-body"></div>
-            </div>
-            <div class="calendar__table-column">
-                <div class="calendar__cell-head"></div>
-                <div class="calendar__cell-body"></div>
-            </div>
-            <div class="calendar__table-column">
-                <div class="calendar__cell-head"></div>
-                <div class="calendar__cell-body"></div>
-            </div>
-            <div class="calendar__table-column">
-                <div class="calendar__cell-head"></div>
-                <div class="calendar__cell-body"></div>
-            </div>
-            <div class="calendar__table-column">
-                <div class="calendar__cell-head"></div>
-                <div class="calendar__cell-body"></div>
-            </div>
-        </div>
-        <div class="calendar__overlay" id="js-calendar-overlay">
-            <div class="calendar__state" id="js-calendar-state">
-                Nahrávání kalendáře...
+    {# Calendar #}
+    {% include 'calendar.twig' %}
+
+    {# Element for scroll animation #}
+    <div id="scroll-here"></div>
+
+    {# Hero elements #}
+    {% for hero in hero_elements %}
+        {% include 'hero.twig' with {'hero' : hero} %}
+    {% endfor %}
+
+    {# Citation elements #}
+    {% if citations %}
+    <!-- Citation component -->
+    <div class="citation" id="js-citation">
+        <div class="citation__container">
+            {% for citation in citations %}
+                {% include 'citation.twig' with {'citation' : citation, 'loop' : loop} %}
+            {% endfor %}
+            <div class="citation__dots" id="js-citation__dots">
+
             </div>
         </div>
     </div>
-    <div class="calendar__more">
-        <a href="https://www.facebook.com/vejdiven/events" target="_blank" class="button">Všechny akce</a>
-    </div>
-</div>
-
-<div id="scroll-here"></div>
-
-{% for hero in hero_elements %}
-<!-- Hero component -->
-    <div class="hero">
-        <div class="hero__item" data-image="{{hero.thumbnail}}">
-            {{hero.post_title}}
-        </div>
-    </div>
-
-    <!-- Container component -->
-    <div class="container">
-        <!-- Info box component -->
-        <div class="info-box">
-            <div class="info-box__action">
-                <h3>Institut Kryptoanarchie</h3>
-                <a href="#" class="button">Více info</a>
-            </div>
-            <div class="info-box__text">
-                <p>
-                    {{hero.post_content}}
-                </p>
-            </div>
-        </div>
-    </div>
-{% endfor %}
-
-<div class="hero">
-    <div class="hero__item" data-image="{{hero_element.thumbnail}}">
-        {{hero_element.title}}
-    </div>
-</div>
-
-<!-- Container component -->
-<div class="container">
-    <!-- Info box component -->
-    <div class="info-box">
-        <div class="info-box__action">
-            <h3>{{hero_element.title}}</h3>
-            <a href="#" class="button">Více info</a>
-        </div>
-        <div class="info-box__text">
-            <p>
-                {{hero_element.content}}
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- Hero component -->
-<div class="hero">
-    <div class="hero__item" data-image="dist/images/institute-of-cryptoanarchy-hero.jpg">
-        Institute of Cryptoanarchy
-    </div>
-</div>
-
-<!-- Container component -->
-<div class="container">
-    <!-- Info box component -->
-    <div class="info-box">
-        <div class="info-box__action">
-            <h3>Institut Kryptoanarchie</h3>
-            <a href="#" class="button">Více info</a>
-        </div>
-        <div class="info-box__text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-        </div>
-    </div>
-</div>
-
-
-<!-- Hero component -->
-<div class="hero">
-    <div class="hero__item" data-image="dist/images/bitcoin-coffee-hero.jpg">
-        Bitcoin coffee
-    </div>
-</div>
-
-<!-- Container component -->
-<div class="container">
-    <!-- Info box component -->
-    <div class="info-box">
-        <div class="info-box__action">
-            <h3>Bitcoin Coffee</h3>
-            <a href="#" class="button">Více info</a>
-        </div>
-        <div class="info-box__text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- Hero component -->
-<div class="hero">
-    <div class="hero__item" data-image="dist/images/paper-hub-hero.jpg">
-        Paper Hub
-    </div>
-</div>
-
-<!-- Container component -->
-<div class="container">
-    <!-- Info box component -->
-    <div class="info-box">
-        <div class="info-box__action">
-            <h3>Paper Hub</h3>
-            <a href="#" class="button">Více info</a>
-        </div>
-        <div class="info-box__text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- Hero component -->
-<div class="hero">
-    <div class="hero__item" data-image="dist/images/makers-lab-hero.jpg">
-        Makers Lab
-    </div>
-</div>
-
-<!-- Container component -->
-<div class="container">
-    <!-- Info box component -->
-    <div class="info-box">
-        <div class="info-box__action">
-            <h3>Makers Lab</h3>
-            <a href="#" class="button">Více info</a>
-        </div>
-        <div class="info-box__text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- Citation component -->
-<div class="citation" id="js-citation">
-    <div class="citation__container">
-        <div class="citation__slide citation__slide--active">
-            <div class="citation__author">
-                <div class="citation__author-name">Coin Telegraph</div>
-                <div class="citation__author-description">Digital currency magazine</div>
-            </div>
-            <div class="citation__content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </div>
-        </div>
-        <div class="citation__slide">
-            <div class="citation__author">
-                <div class="citation__author-name">Bitpay</div>
-                <div class="citation__author-description">Online bitcoin payments</div>
-            </div>
-            <div class="citation__content">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </div>
-        </div>
-        <div class="citation__slide">
-            <div class="citation__author">
-                <div class="citation__author-name">MyTrezor</div>
-                <div class="citation__author-description">You offline wallet</div>
-            </div>
-            <div class="citation__content">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-        </div>
-        <div class="citation__dots" id="js-citation__dots">
-
-        </div>
-    </div>
-</div>
+    {% endif %}
 
 {% endblock %}

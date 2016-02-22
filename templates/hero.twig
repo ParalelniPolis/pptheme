@@ -1,0 +1,24 @@
+{% if hero.thumbnail %}
+<!-- Hero component -->
+<div class="hero">
+    <div class="hero__item" data-image="{{hero.thumbnail}}">
+        {{hero.title}}
+    </div>
+</div>
+{% endif %}
+
+<!-- Container component -->
+<div class="container">
+    <!-- Info box component -->
+    <div class="info-box">
+        <div class="info-box__action">
+            <h3>{{hero.title}}</h3>
+            <a href="{{hero.get_field('wpcf-hero_url')}}" class="button">{{hero.get_field('wpcf-hero_action')}}</a>
+        </div>
+        <div class="info-box__text">
+            <p>
+                {{hero.content}}
+            </p>
+        </div>
+    </div>
+</div>

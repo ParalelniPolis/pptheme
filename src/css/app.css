@@ -1,6 +1,6 @@
 /* Website base styles */
 :root {
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -51,7 +51,7 @@ p {
 
 h1 {
     font-size: 3.5rem;
-    margin: .17em 0;
+    margin: 0.17em 0;
 }
 h2 {
     font-size: 2.9rem;

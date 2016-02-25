@@ -6,5 +6,39 @@
 
 		<h1>{{post.title}}</h1>
 
+		<div class="info-box">
+		    <div class="info-box__action info-box__action--statement">
+		        <h3>statement:</h3>
+		    </div>
+		    <div class="info-box__text">
+		        {{post.content}}
+		    </div>
+		</div>
+
+		{% if hero_elements %}
+			{% for hero in hero_elements|sort %}
+			<div class="info-box">
+				<div class="info-box__action">
+		            <h3>{{hero.title}}</h3>
+		            <a href="{{hero.get_field('wpcf-hero_url')}}" class="button">{{hero.get_field('wpcf-hero_action')}}</a>
+		        </div>
+		        <div class="info-box__text">
+		            <p>
+		                {{hero.content}}
+		            </p>
+		        </div>
+			</div>
+			{% endfor %}
+		{% endif %}
+
+		<div class="info-box">
+			<div class="info-box__action">
+				<h3>Video</h3>
+			</div>
+			<div class="info-box__text">
+				{{post.get_field('wpcf-video')}}
+			</div>
+		</div>
+
 	</div>
 {% endblock %}

@@ -28,6 +28,11 @@ if (is_front_page() ) {
     $context['header_transparent'] = 'header--transparent';
 }
 
+$args = array(
+    'post_type' => 'post'
+);
+$context['blog_posts'] = Timber::get_posts($args);
+
 $timber_carousel_items = array();
 $carousel_item = types_child_posts('carousel-item');
 foreach ($carousel_item as $carousel_item) {

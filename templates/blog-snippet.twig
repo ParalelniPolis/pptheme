@@ -3,56 +3,26 @@
     <h2>blog Paralelní Polis</h2>
 
     <div class="article-wrapper">
-        <a href="#" class="article">
+        {% for article in blog_posts %}
+        <a href="{{article.link}}" class="article">
             <div class="article__date">
                 <div class="article__date-day">
-                    06
+                    {{article.post_date|date}}
                 </div>
                 <div class="article__date-month">
-                    červenec
+                    {{article.post_date|date}}
                 </div>
             </div>
-            <div class="article__image" data-image="dist/images/article-img1.png">
+            <div class="article__image" data-image="{{article.thumbnail}}">
 
             </div>
             <div class="article__title">
-                hackers congres paralelní polis 2015
+                {{article.title}}
             </div>
         </a>
-        <a href="#" class="article">
-            <div class="article__date">
-                <div class="article__date-day">
-                    06
-                </div>
-                <div class="article__date-month">
-                    červenec
-                </div>
-            </div>
-            <div class="article__image" data-image="dist/images/article-img2.png">
-
-            </div>
-            <div class="article__title">
-                drony nad paralelní polis
-            </div>
-        </a>
-        <a href="#" class="article">
-            <div class="article__date">
-                <div class="article__date-day">
-                    06
-                </div>
-                <div class="article__date-month">
-                    červenec
-                </div>
-            </div>
-            <div class="article__image" data-image="dist/images/article-img3.png">
-
-            </div>
-            <div class="article__title">
-                institut kryptoanarchie statement ke kauze ross ulbrich
-            </div>
-        </a>
+        {% endfor %}
     </div>
     <div class="more-articles">
-        <a href="#" class="button">Všechny příspěvky</a>
+        <a href="/blog" class="button">Všechny příspěvky</a>
     </div>
 </div>

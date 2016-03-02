@@ -28,9 +28,7 @@ if (is_front_page() ) {
     $context['header_transparent'] = 'header--transparent';
 }
 
-$args = array(
-    'post_type' => 'post'
-);
+$args = 'post_type=post&numberposts=3';
 $context['blog_posts'] = Timber::get_posts($args);
 
 $timber_carousel_items = array();

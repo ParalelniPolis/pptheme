@@ -14,6 +14,9 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
 
+$args = 'post_type=post&numberposts=3';
+$context['blog_posts'] = Timber::get_posts($args);
+
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {

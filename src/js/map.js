@@ -56,7 +56,7 @@
         var marker = new google.maps.Marker({
             position: position,
             map: map,
-            icon: 'wp-content/themes/pptheme/dist/images/map-logo.png'
+            icon: '/wp-content/themes/pptheme/dist/images/map-logo.png'
         });
         var infoWindow = new google.maps.InfoWindow({
                 content: infoWIndowContent

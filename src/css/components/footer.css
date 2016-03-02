@@ -29,6 +29,6 @@
     padding: 6px;
     padding-left: 40px;
     line-height: 40px;
-    background: url("/dist/images/map-logo.png") no-repeat left center;
+    background: url('/dist/images/map-logo.png') no-repeat left center;
     color: #fff;
 }

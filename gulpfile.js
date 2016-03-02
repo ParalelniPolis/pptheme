@@ -34,40 +34,10 @@ var PATHS = {
     ]
 }
 
-var stylelintConfig = {
-    'plugins': [
-      'stylelint-statement-max-nesting-depth'
-    ],
-    'rules': {
-        'block-no-empty': true,
-        'color-no-invalid-hex': true,
-        'declaration-colon-space-after': 'always',
-        'declaration-colon-space-before': 'never',
-        'function-comma-space-after': 'always',
-        'function-url-quotes': 'double',
-        'media-feature-colon-space-after': 'always',
-        'media-feature-colon-space-before': 'never',
-        'media-feature-name-no-vendor-prefix': true,
-        'max-empty-lines': 5,
-        'number-leading-zero': 'always',
-        'number-no-trailing-zeros': true,
-        'property-no-vendor-prefix': true,
-        'rule-no-duplicate-properties': true,
-        'declaration-block-no-single-line': true,
-        'rule-trailing-semicolon': 'always',
-        'selector-list-comma-space-before': 'never',
-        'selector-list-comma-newline-after': 'always',
-        'selector-no-id': true,
-        'string-quotes': 'double',
-        'value-no-vendor-prefix': true,
-        'statement-max-nesting-depth': [3, { countAtRules: false }]
-    }
-}
-
 gulp.task('stylelint', function() {
     return gulp.src(PATHS.CSS)
         .pipe(postcss([
-            require('stylelint')(stylelintConfig),
+            require('stylelint')(),
             require('postcss-reporter')({
                     clearMessages: true,
                     throwError: true

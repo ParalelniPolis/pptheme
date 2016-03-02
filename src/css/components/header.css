@@ -7,7 +7,7 @@
 }
 .header__logo {
     text-indent: -99999px;
-    background: url("dist/images/logo.png") center center no-repeat;
+    background: url('dist/images/logo.png') center center no-repeat;
     width: 161px;
     height: 46px;
 }
@@ -38,7 +38,7 @@
 }
 .header__navigation-item--with-subnavigation {
     padding-right: 1rem;
-    background: url("/dist/images/arrow-down.png") no-repeat right center;
+    background: url('/dist/images/arrow-down.png') no-repeat right center;
 }
 .header__navigation-item .header__subnavigation {
     position: absolute;
@@ -52,7 +52,7 @@
     background: #4d4d4d;
 
     &::after {
-        content: "\2715";
+        content: '\2715';
         position: absolute;
         top: 0.4rem;
         right: 1rem;

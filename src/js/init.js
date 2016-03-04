@@ -6,7 +6,7 @@
     PP.DEFAULTS = {
         menuResponsiveWidth : 1040,
         mapResponsiveWidth : 800,
-        calendarApiUrl : 'test-data/calendar.json'
+        calendarApiUrl : './wp-content/themes/pptheme/fbevents.php'
     }
     PP.ENVIROMENT = {}
 

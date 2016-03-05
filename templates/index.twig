@@ -1,10 +1,50 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<h1>Blog</h1>
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+	<div class="container">
+		<h1>Blog</h1>
+
+	</div>
+
+	<div class="categories">
+		<div class="container">
+			{% for category in categories %}
+		        <a class="categories__item" href="{{category.link}}">{{category.name}}</a>{{category.active}}
+		    {% endfor %}
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="article-tease__wrapper">
+			{% for post in posts %}
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="pagination">
+		    {% if pagination.prev %}
+		        <a href="{{pagination.prev.link}}" class="pagination__prev">Předchozí</a>
+			{% else %}
+				<span class="pagination__prev">Předchozí</span>
+		    {% endif %}
+		    <div class="pagination__numbers">
+		        {% for page in pagination.pages %}
+		                {% if page.link %}
+		                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+		                {% else %}
+		                    <span class="{{page.class}}">{{page.title}}</span>
+		                {% endif %}
+		        {% endfor %}
+		    </div>
+		    {% if pagination.next %}
+		        <a href="{{pagination.next.link}}" class="pagination__prev">Další</a>
+			{% else %}
+				<span class="pagination__next">Další</span>
+		    {% endif %}
+		</div>
+	</div>
 {% endblock %}
 
 {% block blog_snippet %}

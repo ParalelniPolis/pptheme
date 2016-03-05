@@ -1,0 +1,21 @@
+.pagination {
+    margin: 2rem 0;
+    text-align: center;
+}
+.pagination__numbers,
+.pagination__prev,
+.pagination__next {
+    display: inline-block;
+    margin: 0 1rem;
+    line-height: 2rem;
+}
+.page-number {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+
+    &.current {
+        background: #333;
+        color: #fff;
+    }
+}

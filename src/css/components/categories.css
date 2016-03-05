@@ -1,0 +1,24 @@
+.categories {
+    background: #333;
+    padding: 1.5rem 0;
+}
+.categories__item {
+    display: block;
+    margin: 0 0.3rem;
+    padding: 0.3em 0.75em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 3rem;
+}
+
+.categories__item:hover {
+    color: #333;
+    background: #fff;
+}
+
+@media screen and (min-width: 40rem) {
+    .categories__item {
+        display: inline-block;
+    }
+}

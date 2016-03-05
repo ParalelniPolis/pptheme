@@ -1,9 +1,21 @@
-<article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
-	{% block content %}
-		<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
-		<p>{{post.get_preview}}</p>
-		{% if post.get_thumbnail %}
-			<img src="{{post.thumbnail.src}}" />
-		{% endif %}
-	{% endblock %}
+<article class="article-tease">
+
+	{% if post.get_thumbnail %}
+		<a class="article-tease__thumbnail" href="{{post.link}}" style="background-image: url('{{post.thumbnail.src}}')">
+			<div class="article-tease__date">
+                <div class="article-tease__date-day">
+                    {{post.post_date|date('d')}}
+                </div>
+                <div class="article-tease__date-month">
+                    {{post.post_date|date('M')}}
+                </div>
+            </div>
+		</a>
+	{% endif %}
+
+	<h4><a href="{{post.link}}">{{post.title}}</a></h4>
+	<div class="article-tease__info">
+		Autor: {{post.author}} | Kategorie: {% for category in post.categories %}{{category}}{% endfor %}
+	</div>
+	<p>{{post.get_preview(50, true, '<br>Více')}}</p>
 </article>

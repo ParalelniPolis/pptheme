@@ -7,7 +7,10 @@
         <a href="{{article.link}}" class="article">
             <div class="article__date">
                 <div class="article__date-day">
-                    {{article.post_date|date}}
+                    {{article.post_date|date('d')}}
+                </div>
+                <div class="article__date-month">
+                    {{article.post_date|date('M')}}
                 </div>
             </div>
             <div class="article__image" data-image="{{article.thumbnail}}">

@@ -31,8 +31,16 @@ var PATHS = {
         './src/images/*.svg',
         './src/images/*.gif',
         './src/images/*.png'
+    ],
+    FAVICON : [
+        './src/images/favicon.ico'
     ]
 }
+
+gulp.task('favicon', function() {
+    return gulp.src(PATHS.FAVICON)
+        .pipe(gulp.dest('./dist/images/'));
+});
 
 gulp.task('stylelint', function() {
     return gulp.src(PATHS.CSS)
@@ -101,5 +109,5 @@ gulp.task('watch', function() {
     }));
 });
 
-gulp.task('build', ['styles', 'scripts', 'fonts']);
+gulp.task('build', ['styles', 'scripts', 'fonts', 'favicon']);
 gulp.task('default', ['build']);

@@ -42,10 +42,15 @@
 }
 .article__date-day {
     padding: 0.2rem 0.875rem;
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
     background: #000;
+}
+.article__date-month {
+    font-size: 0.7rem;
+    color: #000;
+    background: #d9d9d9;
 }
 .article__image {
     position: relative;

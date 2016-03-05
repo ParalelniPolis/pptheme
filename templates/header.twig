@@ -1,8 +1,8 @@
 <!-- Header component -->
 <div class="header {{header_transparent}}" id="js-header">
     <div class="header__navigation-wrapper">
-        <a href="/" class="header__logo">
-                    Paralelní Polis
+        <a href="{{site.url}}" class="header__logo">
+                    {{site.name}}
                 </a>
         <ul class="header__navigation" role="menubar" aria-label="Hlavní menu">
             {% for item in menu.get_items %}
@@ -21,8 +21,8 @@
             {% endfor %}
         </ul>
         <div class="header__language-links">
-            <a href="#" class="header__language-link">Česky</a>
-            <a href="#" class="header__language-link">English</a>
+            <a href="{{site.url}}" class="header__language-link">Česky</a>
+            <a href="{{site.url}}/en/" class="header__language-link">English</a>
         </div>
     </div>
 </div>

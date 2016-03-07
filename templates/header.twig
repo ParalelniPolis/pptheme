@@ -2,8 +2,8 @@
 <div class="header {{header_transparent}}" id="js-header">
     <div class="header__navigation-wrapper">
         <a href="{{site.url}}" class="header__logo">
-                    {{site.name}}
-                </a>
+            {{site.name}}
+        </a>
         <ul class="header__navigation" role="menubar" aria-label="Hlavní menu">
             {% for item in menu.get_items %}
                 <li role="menuitem" tabindex="0" class="header__navigation-item {% if item.get_children %}header__navigation-item--with-subnavigation{% endif %}">

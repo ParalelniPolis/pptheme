@@ -12,7 +12,7 @@
 
     var loadStaticMap = function() {
         var mapLink = document.createElement('a');
-        var imageUrl = 'dist/images/static-map.png'
+        var imageUrl = PP.ENVIROMENT.siteUrl + '/wp-content/themes/pptheme/dist/images/static-map.png';
         var image = new Image();
 
         mapLink.target = '_blank';
@@ -56,7 +56,7 @@
         var marker = new google.maps.Marker({
             position: position,
             map: map,
-            icon: '/wp-content/themes/pptheme/dist/images/map-logo.png'
+            icon: PP.ENVIROMENT.siteUrl + '/wp-content/themes/pptheme/dist/images/map-logo.png'
         });
         var infoWindow = new google.maps.InfoWindow({
                 content: infoWIndowContent

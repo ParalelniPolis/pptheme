@@ -3,12 +3,16 @@
 (function(window, document, PP) {
 
     // PUBLIC STUFF
+
+    PP.ENVIROMENT = {}
+
+    PP.ENVIROMENT.siteUrl = document.getElementById('siteUrl').value;
+
     PP.DEFAULTS = {
         menuResponsiveWidth : 1040,
         mapResponsiveWidth : 800,
-        calendarApiUrl : './wp-content/themes/pptheme/fbevents.php'
+        calendarApiUrl : PP.ENVIROMENT.siteUrl + '/wp-content/themes/pptheme/fbevents.php'
     }
-    PP.ENVIROMENT = {}
 
     PP.scrollTop = function() {
         return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;

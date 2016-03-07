@@ -7,12 +7,19 @@
     padding: 2rem 0;
 }
 .article-tease {
-    margin: 0 2rem;
-    flex: 1 1 27rem;
+    flex: 1 1 22rem;
+    max-width: 100%;
 
     & h4 {
         margin-bottom: 1rem;
     }
+
+    @media screen and (min-width: 40rem) {
+        & {
+            padding: 1rem;
+        }
+    }
+
 }
 .article-tease__thumbnail {
     position: relative;

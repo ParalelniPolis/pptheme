@@ -15,7 +15,7 @@
 
 	<h4><a href="{{post.link}}">{{post.title}}</a></h4>
 	<div class="article-tease__info">
-		Autor: {{post.author}} | Kategorie: {% for category in post.categories %}{{category}}{% endfor %}
+		Autor: {{post.author}} | Kategorie: {% for category in post.categories %}{{category}}{% if not loop.last %}, {% endif %}{% endfor %}
 	</div>
 	<p>{{post.get_preview(50, true, '<br>Více')}}</p>
 </article>

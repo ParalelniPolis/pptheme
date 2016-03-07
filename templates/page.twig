@@ -20,7 +20,9 @@
 			<div class="info-box">
 				<div class="info-box__action">
 		            <h3>{{hero.title}}</h3>
-		            <a href="{{hero.get_field('wpcf-hero_url')}}" class="button">{{hero.get_field('wpcf-hero_action')}}</a>
+					{% if hero.get_field('wpcf-hero_url') %}
+						<a href="{{hero.get_field('wpcf-hero_url')}}" class="button">{{hero.get_field('wpcf-hero_action')}}</a>
+					{% endif %}
 		        </div>
 		        <div class="info-box__text">
 		            <p>

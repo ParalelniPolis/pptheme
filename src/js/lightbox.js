@@ -1,6 +1,6 @@
 (function(window, document, PP) {
     PP.lightbox = function() {
-        var lightboxElements = document.getElementsByClassName('lightbox');
+        var lightboxElements = document.querySelectorAll('.gallery-item a');
 
         if(lightboxElements.length > 0) {
             initLightbox();

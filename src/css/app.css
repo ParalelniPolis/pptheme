@@ -52,6 +52,7 @@ p {
 h1 {
     font-size: 3.5rem;
     margin: 0.17em 0;
+    word-wrap: break-word;
 }
 h2 {
     font-size: 2.9rem;

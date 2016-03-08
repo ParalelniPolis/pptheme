@@ -15,9 +15,13 @@
         }, false);
     }
 
-    document.addEventListener('touchend', function(event) {
+    document.addEventListener('click', function(event) {
         var clickedItem = event.target;
         var activeItem = document.querySelector('.header__navigation-item-link.is--active');
+
+        if(clickedItem.parentElement.classList.contains('header__subnavigation') || window.innerWidth > 1210) {
+            return true;
+        }
 
         if(clickedItem == activeItem || activeItem !== null) {
             activeItem.classList.remove('is--active');

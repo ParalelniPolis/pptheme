@@ -42,7 +42,7 @@
 }
 .header__navigation-item .header__subnavigation {
     position: absolute;
-    top: 70px;
+    top: 100px;
     right: 0;
     left: 0;
     z-index: 999;
@@ -99,6 +99,11 @@
     &:hover {
         color: #333;
         background: #ddd;
+    }
+}
+@media screen and (min-width: 64.3125rem) {
+    .header__navigation-item .header__subnavigation {
+        top: 70px;
     }
 }
 @media screen and (min-width: 75.6875rem) {

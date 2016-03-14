@@ -1,7 +1,7 @@
 
 # Created by https://www.gitignore.io/api/ordpre,wordpress,osx,node
 
-#!! ERROR: ordpre is undefined. Use list command to see defined gitignore types !!#
+dist/
 
 ### WordPress ###
 *.log

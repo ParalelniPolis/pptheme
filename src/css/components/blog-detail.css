@@ -26,12 +26,17 @@
 
 .blog-detail__article {
     border-bottom: 2px solid #ccc;
+    text-align: justify;
 
     &::after {
         content: '';
         display: table;
         clear: both;
     }
+}
+
+.blog-detail__image {
+    text-align: center;
 }
 
 .blog-detail__image img {
@@ -58,9 +63,8 @@
 
 @media screen and (min-width: 40rem) {
     .blog-detail__image img {
-        width: 40%;
-        float: left;
-        margin: 1em 1em 1em 0;
+        width: 60%;
+        margin: 1em 1em 0;
     }
     .blog-detail__article img {
         margin: 1em;

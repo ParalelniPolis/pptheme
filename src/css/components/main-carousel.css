@@ -9,7 +9,7 @@
 
     @media screen and (min-width: 75.6875rem) {
         & {
-            margin-top: -4.4rem;
+            margin-top: -6.4rem;
         }
     }
 }
@@ -38,6 +38,7 @@
     display: inline-block;
     font-size: 3rem;
     font-weight: 600;
+    letter-spacing: -0.04em;
 
     @media screen and (min-width: 60rem) {
         & {
@@ -47,7 +48,9 @@
 }
 .main-carousel__item-content {
     display: inline-block;
-    font-size: 0.8rem;
+    margin-top: -0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
     text-shadow: 0 0 3px #000;
 }
 .main-carousel__dots {

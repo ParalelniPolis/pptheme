@@ -12,6 +12,15 @@
 
     & h4 {
         margin-bottom: 1rem;
+        line-height: 1.1em;
+    }
+
+    & a {
+        color: #000;
+
+        &:hover {
+            color: #555;
+        }
     }
 
     @media screen and (min-width: 40rem) {
@@ -54,4 +63,7 @@
     border-bottom: 1px solid #333;
     font-size: 0.7em;
     color: #333;
+}
+.article-tease p {
+    text-align: justify;
 }

@@ -14,7 +14,7 @@
     }
 }
 .info-box__action {
-    padding: 1rem 0;
+    padding: 1rem 1rem 0 0;
     flex-basis: 100%;
     word-break: break-word;
     hyphens: auto;
@@ -23,13 +23,19 @@
         margin: 1rem 0;
     }
 }
+.info-box__action--statement,
+.info-box__action--statement + .info-box__text {
+    margin-top: -2rem;
+}
 .info-box__action--statement h3 {
+    margin-top: 0.5rem;
     font-weight: 300;
     color: #de454e;
 }
 .info-box__text {
     padding: 1rem 0;
     flex-basis: 100%;
+    color: #222;
 }
 @media screen and (min-width: 40rem) {
     .info-box {

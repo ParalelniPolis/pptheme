@@ -14,17 +14,12 @@ html {
             font-size: 110%;
         }
     }
-    @media screen and (min-width: 60rem) {
-        & {
-            font-size: 120%;
-        }
-    }
 }
 
 body {
     @media screen and (min-width: 75.6875rem) {
         & {
-            padding-top: 4.4rem;
+            padding-top: 6.4rem;
         }
     }
 }
@@ -46,12 +41,20 @@ a {
 }
 
 p {
-    line-height: 2em;
+    line-height: 1.8em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+        letter-spacing: -0.04em;
 }
 
 h1 {
     font-size: 3.5rem;
     margin: 0.17em 0;
+    line-height: 1.1em;
     word-wrap: break-word;
 }
 h2 {

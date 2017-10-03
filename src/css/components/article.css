@@ -65,13 +65,14 @@
     opacity: 1;
 }
 .article__title {
-    height: 6.25rem;
+    height: 4.25rem;
     padding: 0.5rem 1rem;
-    font-size: 1.375rem;
+    font-size: 1.1rem;
     font-weight: 600;
     text-align: center;
     color: #000;
     background: #d9d9d9;
+    overflow: hidden;
 }
 .more-articles {
     margin: 2rem 0;

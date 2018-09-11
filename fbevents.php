@@ -1,48 +1,36 @@
 <?php
 
-error_reporting(-1);
-ini_set('display_errors', 'On');
+$appId = "";
+$appSecret = "";
+$accessToken = "";
+$pageName = "";
 
-$app_id = "475486162662346";
-$app_secret = "c9887bb8358b2a88a5d83dc9c3bf6d2e";
+require_once __DIR__ . '/vendor/autoload.php';
 
-
-require 'vendor/autoload.php';
-
-require __DIR__ . '/vendor/facebook/php-sdk-v4/autoload.php';
-
-use Facebook\FacebookSession;
-use Facebook\FacebookRequest;
-use Facebook\GraphUser;
-use Facebook\FacebookRequestException;
-use Facebook\FacebookJavaScriptLoginHelper;
-
-FacebookSession::setDefaultApplication($app_id,$app_secret);
-
-$session = new FacebookSession($app_id."|".$app_secret);
+$fb = new Facebook\Facebook([
+    'app_id' => $appId,
+    'app_secret' => $appSecret,
+    'default_graph_version' => 'v3.1',
+	'default_access_token' => $accessToken
+]);
 
 try {
-    // Get a list of pages with you as admin
-    $request = new FacebookRequest($session, 'GET', '/vejdiven/events');
-
-    $pageList = $request->execute()->getGraphObject()->asArray();
-
-    $events_list = array();
-
-    foreach ($pageList["data"] as $event) {
-
-        $event_stamp = strtotime($event->start_time);
-
-        $event->timestamp = $event_stamp;
-
-        $events_list[] = $event;
-
-    }
-
-    echo json_encode($events_list);
-
-
-} catch (FacebookRequestException $e) {
-    echo 'Request error: ' . $e->getMessage();
+    $response = $fb->get('/' . $pageName . '/events');
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+    echo 'Graph returned an error: ' . $e->getMessage();
+    exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+    echo 'Facebook SDK returned an error: ' . $e->getMessage();
     exit;
 }
+
+$pageList = $response->getGraphEdge()->asArray();
+$eventsList = array();
+foreach ($pageList as $event) {
+	$event['timestamp'] = $event['start_time']->getTimestamp();
+	$event['start_time'] = $event['start_time']->format(DATE_ISO8601);
+	$event['end_time'] = $event['end_time']->format(DATE_ISO8601);
+	$eventsList[] = $event;
+}
+
+echo json_encode($eventsList);

@@ -3,34 +3,28 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-$app_id = "475486162662346";
-$app_secret = "c9887bb8358b2a88a5d83dc9c3bf6d2e";
+$appId = "";
+$appSecret = "";
+$token = "";
+$pageName = "";
 
+require_once __DIR__ . '/vendor/autoload.php';
 
-require 'vendor/autoload.php';
-
-require __DIR__ . '/vendor/facebook/php-sdk-v4/autoload.php';
-
-use Facebook\FacebookSession;
-use Facebook\FacebookRequest;
-use Facebook\GraphUser;
-use Facebook\FacebookRequestException;
-use Facebook\FacebookJavaScriptLoginHelper;
-
-FacebookSession::setDefaultApplication($app_id,$app_secret);
-
-$session = new FacebookSession($app_id."|".$app_secret);
+$fb = new Facebook\Facebook([
+    'app_id' => $appId,
+    'app_secret' => $appSecret,
+    'default_graph_version' => 'v3.1'
+]);
 
 try {
-    // Get a list of pages with you as admin
-    $request = new FacebookRequest($session, 'GET', '/vejdiven/events');
-
-    $pageList = $request->execute()->getGraphObject()->asArray();
-
-    var_dump($pageList);
-
-
-} catch (FacebookRequestException $e) {
-    echo 'Request error: ' . $e->getMessage();
+    $response = $fb->get('/' . $pageName . '/events', $token);
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+    echo 'Graph returned an error: ' . $e->getMessage();
+    exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+    echo 'Facebook SDK returned an error: ' . $e->getMessage();
     exit;
 }
+
+$pageList = $response->getGraphEdge()->asArray();
+var_dump($pageList);

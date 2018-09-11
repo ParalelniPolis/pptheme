@@ -1,30 +1,27 @@
 {
-  "name": "upstatement/timber-starter-theme",
-  "description": "Starter theme to build a Timber theme",
-  "type":"wordpress-theme",
-  "minimum-stability" : "stable",
-  "authors": [
-      {
-          "name": "jarednova",
-          "email": "jared@upstatement.com"
-      }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://wpackagist.org"
-    }
-  ],
-  "extra": {
-  	"installer-paths": {
-      "../../plugins/{$name}/": [
-        "wpackagist-plugin/*",
-        "type:wordpress-plugin"
-      ]
-  	}
+	"name": "upstatement/timber-starter-theme",
+	"description": "Starter theme to build a Timber theme",
+	"type":"wordpress-theme",
+	"minimum-stability" : "stable",
+	"authors": [{
+		"name": "jarednova",
+		"email": "jared@upstatement.com"
+	}],
+	"repositories": [{
+		"type": "composer",
+		"url": "https://wpackagist.org"
+	}],
+	"extra": {
+		"installer-paths": {
+			"../../plugins/{$name}/": [
+				"wpackagist-plugin/*",
+				"type:wordpress-plugin"
+			]
+		}
 	},
-  "require": {
-	  "wpackagist-plugin/timber-library": "0.22.*",
-    "facebook/php-sdk-v4": "4.0.23"
-  }
+	"require": {
+		"wpackagist-plugin/timber-library": "0.22.*",
+		"facebook/graph-sdk": "5.6.*"
+	}
 }
+

@@ -13,8 +13,9 @@ Run these commands in root folder of theme:
 npm install -g gulp
 npm install
 gulp build
+composer install --no-dev
 ```
 
-Now all necessary files should be builded inside the 'dist' folder.
+Now all necessary files should be built inside the 'dist' folder and all libraries downloaded to the 'vendor' folder.
 
-Note: All changes should be made on files in 'src' folder and then builded, build process overwrites all files in 'dist' folder.
+Note: All changes should be made on files in 'src' folder and then built, build process overwrites all files in 'dist' folder.

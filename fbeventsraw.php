@@ -5,7 +5,7 @@ ini_set('display_errors', 'On');
 
 $appId = "";
 $appSecret = "";
-$token = "";
+$accessToken = "";
 $pageName = "";
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -13,11 +13,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 $fb = new Facebook\Facebook([
     'app_id' => $appId,
     'app_secret' => $appSecret,
-    'default_graph_version' => 'v3.1'
+    'default_graph_version' => 'v3.1',
+    'default_access_token' => $accessToken
 ]);
 
 try {
-    $response = $fb->get('/' . $pageName . '/events', $token);
+    $response = $fb->get('/' . $pageName . '/events');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
     echo 'Graph returned an error: ' . $e->getMessage();
     exit;

@@ -67,33 +67,39 @@
             var bodyCells = calendarTable.getElementsByClassName('calendar__cell-body');
 
             Array.prototype.forEach.call(headCells, function(cell, index) {
-                var cellDate = new Date(calendarData[index][0].start_time);
-                if (cellDate.toDateString() == new Date().toDateString()) {
-                    dayName = 'Dnes';
-                }
-                else if (new Date(cellDate.valueOf() - 86400000).toDateString() == new Date().toDateString()) {
-                    dayName = 'Zítra';
-                }
-                else {
-                    dayName = dayMapping[cellDate.getDay()] + ' ' + cellDate.getDate() + '.' + (cellDate.getMonth() + 1) + '.';
-                }
+				if (index in calendarData) {
+					var cellDate = new Date(calendarData[index][0].start_time);
+					if (cellDate.toDateString() == new Date().toDateString()) {
+						dayName = 'Dnes';
+					}
+					else if (new Date(cellDate.valueOf() - 86400000).toDateString() == new Date().toDateString()) {
+						dayName = 'Zítra';
+					}
+					else {
+						dayName = dayMapping[cellDate.getDay()] + ' ' + cellDate.getDate() + '.' + (cellDate.getMonth() + 1) + '.';
+					}
+				} else {
+					dayName = '\u00A0';
+				}
                 cell.textContent = dayName;
             });
             Array.prototype.forEach.call(bodyCells, function(cell, cellIndex) {
-                calendarData[cellIndex].forEach(function(event, eventIndex) {
-                    var eventDate = new Date(event.start_time);
-                    var eventHours = eventDate.getHours();
-                    var eventMinutes = eventDate.getMinutes().toString().length > 1 ? eventDate.getMinutes() : "0" + eventDate.getMinutes();
-                    var eventDescription = event.description.substring(0, event.description.indexOf(' ', 45)) + '...';
-                    var eventElement = document.createElement('a');
+				if (cellIndex in calendarData) {
+					calendarData[cellIndex].forEach(function(event, eventIndex) {
+						var eventDate = new Date(event.start_time);
+						var eventHours = eventDate.getHours();
+						var eventMinutes = eventDate.getMinutes().toString().length > 1 ? eventDate.getMinutes() : "0" + eventDate.getMinutes();
+						var eventDescription = event.description.substring(0, event.description.indexOf(' ', 45)) + '...';
+						var eventElement = document.createElement('a');
 
-                    eventElement.className = 'calendar__event';
-                    eventElement.innerHTML = eventHours + ':' + eventMinutes + '<br>' + event.name + '<br>' + eventDescription;
-                    eventElement.href = 'https://www.facebook.com/profile.php?id=' + event.id;
-                    eventElement.target = '_blank';
+						eventElement.className = 'calendar__event';
+						eventElement.innerHTML = eventHours + ':' + eventMinutes + '<br>' + event.name + '<br>' + eventDescription;
+						eventElement.href = 'https://www.facebook.com/profile.php?id=' + event.id;
+						eventElement.target = '_blank';
 
-                    cell.appendChild(eventElement);
-                });
+						cell.appendChild(eventElement);
+					});
+				}
             });
 
             PP.fadeOut(calendarOverlay, 1000, function() {
